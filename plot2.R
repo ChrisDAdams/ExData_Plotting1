@@ -14,8 +14,10 @@ plot2 <- function() {
   DT1 <- subset(DT, as.Date(DT$Date, "%d/%m/%Y") > "2007-01-31" & as.Date(DT$Date, "%d/%m/%Y") < "2007-02-03")
   DT1$Date <- paste(DT1$Date,DT1$Time)
   DT1$Date <- dmy_hms(DT1$Date)
-#Write plot2 to a png file
+#Write plot1 to a png file
   png(filename=".//data//plot2.png",width=480,height=480)
   par(mar=c(3,4,2,2))
   plot(DT1$Date,DT1$Global_active_power,type="l", ylab="Global Active Power (kilowatts)")
   dev.off()
+
+}
